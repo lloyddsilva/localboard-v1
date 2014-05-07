@@ -38,6 +38,10 @@ GEM
       sass (~> 3.2)
     builder (3.2.2)
     cancan (1.6.10)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -62,6 +66,7 @@ GEM
       rails (>= 3, < 5)
     font-awesome-rails (4.0.3.2)
       railties (>= 3.2, < 5.0)
+    geocoder (1.2.0)
     haml (4.0.5)
       tilt
     hike (1.2.3)
@@ -93,6 +98,11 @@ GEM
     paper_trail (3.0.1)
       activerecord (>= 3.0, < 5.0)
       activesupport (>= 3.0, < 5.0)
+    paperclip (4.1.1)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     polyglot (0.3.4)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
@@ -186,10 +196,12 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   figaro
+  geocoder
   hub
   jbuilder (~> 1.2)
   jquery-rails
   paper_trail (~> 3.0.1)
+  paperclip
   quiet_assets
   rails (= 4.1.1)
   rails_admin

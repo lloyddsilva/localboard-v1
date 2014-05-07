@@ -18,7 +18,8 @@ gem 'thin'
 
 gem 'paper_trail', '~> 3.0.1'
 gem 'rails_admin'
-
+gem 'paperclip'
+gem 'geocoder'
 
 group :development do
   gem 'better_errors'

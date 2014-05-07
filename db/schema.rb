@@ -11,7 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507211113) do
+ActiveRecord::Schema.define(version: 20140507230624) do
+
+  create_table "locations", force: true do |t|
+    t.string   "address"
+    t.string   "street_name"
+    t.string   "block_number"
+    t.string   "postal_code"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "post_categories", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "alias"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "post_category_id"
+    t.integer  "user_id"
+    t.integer  "postable_id"
+    t.string   "postable_type"
+    t.string   "attached_document_file_name"
+    t.string   "attached_document_content_type"
+    t.integer  "attached_document_file_size"
+    t.datetime "attached_document_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"

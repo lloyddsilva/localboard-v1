@@ -1,4 +1,14 @@
 LocalboardV1::Application.routes.draw do
+  get 'pages/home'
+
+  get 'pages/about'
+
+  get 'pages/help'
+
+  get 'pages/media'
+
+  get 'pages/contact'
+
   resources :post_categories
 
   resources :posts

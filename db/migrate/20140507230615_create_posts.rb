@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :content
       t.integer :post_category_id
       t.integer :user_id
+      t.integer :location_id
       t.integer :postable_id
       t.string :postable_type
       t.attachment :attached_document

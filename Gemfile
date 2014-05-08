@@ -20,6 +20,9 @@ gem 'paper_trail', '~> 3.0.1'
 gem 'rails_admin'
 gem 'paperclip'
 gem 'geocoder'
+gem 'validates_timeliness'
+gem 'bootstrap-datetimepicker-rails'
+gem 'acts_as_commentable'
 
 group :development do
   gem 'better_errors'

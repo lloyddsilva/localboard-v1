@@ -16,7 +16,13 @@ LocalboardV1::Application.routes.draw do
   resources :locations
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  root :to => "home#index"
+  root :to => "pages#home"
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
+
+  devise_scope :user do
+    get "register", :to => "devise/registrations#new", :as => :register
+    get "login", :to => "devise/sessions#new", :as => :login
+    get "logout", :to => "devise/sessions#destroy", :as => :logout
+  end
 end

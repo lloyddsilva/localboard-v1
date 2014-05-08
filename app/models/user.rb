@@ -9,9 +9,11 @@ class User < ActiveRecord::Base
 
   has_many :posts, as: :postable, dependent: :destroy
 
-
-
   after_create :ensure_at_least_one_admin
+
+  def full_name 
+      name
+  end
 
   # We never want an app without an admin so let's ensure there is at least one user
     def ensure_at_least_one_admin

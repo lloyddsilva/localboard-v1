@@ -6,10 +6,10 @@ class Post < ActiveRecord::Base
 	belongs_to :post_category
 	belongs_to :location
 
-	#acts_as_commentable
+	acts_as_commentable
 	#acts_as_likeable
 
-	#has_attached_file :attached_document, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "missing.jpg", :storage => :s3
+	has_attached_file :attached_document, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "missing.jpg"
 
-	#validates_attachment_content_type :attached_document, :content_type => /\Aimage\/.*\Z/
+	validates_attachment_content_type :attached_document, :content_type => /\Aimage\/.*\Z/
 end

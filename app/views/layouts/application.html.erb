@@ -2,19 +2,49 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Localboard V1" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Localboard V1" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "LocalBoard" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "LocalBoard" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+     <body class="<%= controller_name %> <%= action_name %>">
+     <% if user_signed_in? %>
+
+     <%= render 'layouts/header_signed_in' %>
+     <div class= "container">
+
+        <div class="col-md-12">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+        </div>
+
+
+    </div>
+    <%= render 'layouts/footer' %>
+
+    <% else %>
+    <%= render 'layouts/header_not_signed_in' %>
+
+      <div class="container">
+      <%= render 'layouts/messages' %>
+      </div>
+      
+      <%= yield %>
+    
+
+    <%= render 'layouts/footer' %>
+
+    <% end %>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <!--common script for all pages-->
+    <%= javascript_include_tag "theme/app" %>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+        App.init();
+      });
+    </script>
   </body>
 </html>

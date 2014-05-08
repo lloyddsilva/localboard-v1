@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20140508011734) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "locations", force: true do |t|
+    t.string   "country"
+    t.string   "city"
     t.string   "address"
     t.string   "street_name"
     t.string   "block_number"

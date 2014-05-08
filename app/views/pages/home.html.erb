@@ -13,65 +13,81 @@
 <div class ="one-page">
   <div class="one-page-inner one-light-green">
     <div class="container">
+    <div class="row text-center">
+        <h2>Find happenings around you</h2>
+    </div>
      <div class="row margin-bottom-30">
-        <h5>Enter your address to begin</h5>
 
-        <%= simple_form_for :lookup, { url: new_user_registration_path, :html => { :method => 'GET' }} do |f| %>
-        <div class="form-inputs">
-          <%= f.input :address, :placeholder => "e.g. 120 Tanjong Rhu Road, Singapore", :input_html => {:id => "addresspicker", :class => "form-control margin-bottom-20"}, label: false %>
+        <%= simple_form_for :lookup, { url: posts_path, :html => { :method => 'GET' }} do |f| %>
+        <div class="input-group">
+                                    <%= f.input :address, :placeholder => "e.g. 120 Tanjong Rhu Road, Singapore", :input_html => {:id => "addresspicker", :class => "form-control margin-bottom-20"}, label: false %>
+
+                                    <span class="input-group-btn">
+                                        <%= f.button :submit, "Go!", :class => 'btn-u btn-block color-white' %>
+                                    </span>
         </div>
-        <div class="form-actions">
-          <%= f.button :submit, "Find Happenings around you!", :class => 'btn-u btn-block color-green' %>
-        </div>
+        
         <% end %>
 
     </div><!--/row-->
-  </div>
-</div>
- <div class="header-divider"></div> 
-</div>
 
-<div class="container">
-<!-- Promo box -->
+    <div class="row text-center">
+        <h3>- OR -</h3>
+        <h3>&nbsp;</h3>
 
-<div class="row">
+    </div>
+
+    <div class="row text-center">
+        <h2>Post a note to people around you</h2>
+    </div>
+    <div class="row">
         <div class="col-sm-3">
             <div class="promo-box">
-                <i class="fa fa-bullhorn color-blue"></i>
+            <%= link_to new_post_path  do %>
+                <i class="fa fa-bullhorn color-green"></i>
                 <strong>Local Discussions</strong>
-                <p>Chat about things hyperlocally</p>
+                <p class="color-green">Chat about things hyperlocally</p>
+            <% end %>
             </div>
         </div>
 
         <div class="col-sm-3">
-            <div class="promo-box">        
-                <i class="fa fa-chain-broken color-blue"></i>
+            <div class="promo-box"> 
+            <%= link_to new_post_path  do %>       
+                <i class="fa fa-chain-broken color-green"></i>
                 <strong>Report a Problem</strong>
                 <p>Spotted something broken? Report it directly to the relevant agency</p>
+            <% end %>
             </div>
         </div>
 
         <div class="col-sm-3">
             <div class="promo-box">
-                <i class="fa fa-money color-blue"></i>
+            <%= link_to new_post_path  do %>
+                <i class="fa fa-money color-green"></i>
                 <strong>Classifieds</strong>
                 <p>Buy & Sell items nearby</p>
+            <% end %>  
             </div>
         </div>
 
         <div class="col-sm-3">
             <div class="promo-box">
-                <i class="fa fa-rss color-blue"></i>
+            <%= link_to new_post_path  do %>
+                <i class="fa fa-rss color-green"></i>
                 <strong>Local Events</strong>
-                <p>Join & Organise Events around you</p>                
+                <p>Join & Organise Events around you</p> 
+            <% end %>               
             </div>        
         </div>
 
         
     </div>
-
-<!-- End Promo box -->
+  </div>
 </div>
+ <div class="header-divider"></div> 
+</div>
+
 
 
 <!--=== End Content Part ===-->

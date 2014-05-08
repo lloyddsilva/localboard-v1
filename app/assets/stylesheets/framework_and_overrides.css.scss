@@ -14,7 +14,7 @@
 .social_twitter {background: url(../../../assets/twitter.png) no-repeat;}
 
 .copyright {
-  margin-top: 40px;
+  margin-top: 0px;
 }
 
 /*Navbar*/
@@ -112,7 +112,7 @@
 .btn-facebook:active,.btn-facebook.active,.open .dropdown-toggle.btn-facebook{background-image:none}
 
 
-.one-page .one-light-green h1, .one-page .one-light-green h2, .one-page .one-light-green h3, .one-page .one-light-green h4, .one-page .one-light-green h5 {
+.one-page .one-light-green h1, .one-page .one-light-green h2, .one-page .one-light-green h3, .one-page .one-light-green h4, .one-page .one-light-green h5, .one-page .one-light-green p {
 color: #46993F;
 }
 
@@ -152,4 +152,8 @@ hr .color-green {
 
 .align-center { 
    text-align: center;
+}
+
+.header .navbar-brand {
+top: 10px;
 }

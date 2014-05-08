@@ -271,7 +271,7 @@
 /*Brand*/
 .header .navbar-brand { 
 	z-index: 1;
-	top: -10px;
+	top: 15px;
 	position: relative;
 	padding: 0 10px 10px;
 }

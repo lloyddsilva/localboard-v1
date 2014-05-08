@@ -1,17 +1,23 @@
+
+<div class="container">
 <%= simple_form_for(@post) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :content %>
-    <%= f.input :post_category_id %>
-    <%= f.input :user_id %>
-    <%= f.input :postable_id %>
-    <%= f.input :postable_type %>
-    <%= f.input :attached_document %>
+  <div class="form-group">
+    <%= f.input :title, :input_html => {:class => "form-control"}, :label => "Note Title", :label_html => {:class => "color-green"} %>
   </div>
+  <div class="form-group">
+    <%= f.input :content, :input_html => {:class => "form-control"}, :label => "Note Content", :label_html => {:class => "color-green"} %>
+   </div>
+   <div class="form-group">
+    <%= f.input :location, :input_html => {:class => "form-control"}, :label => "Location", :label_html => {:class => "color-green"} %>
+   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+   <div class="form-group">
+    <%= f.button :submit, :class => "pull-right btn-u btn-u-green" %>
+    <%= link_to 'Back', :back, :class => "" %>
   </div>
+    
 <% end %>
+</div>
+

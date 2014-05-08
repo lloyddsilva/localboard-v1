@@ -1,37 +1,23 @@
-<h1>Listing posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Post category</th>
-      <th>User</th>
-      <th>Postable</th>
-      <th>Postable type</th>
-      <th>Attached document</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= post.post_category_id %></td>
-        <td><%= post.user_id %></td>
-        <td><%= post.postable_id %></td>
-        <td><%= post.postable_type %></td>
-        <td><%= post.attached_document %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+
+
+    <div class="row blog blog-medium margin-bottom-40">
+                    <div class="col-md-5">
+                        <%= image_tag post.attached_document.url(:large) unless post.attached_document.nil? %>
+                    </div>    
+                    <div class="col-md-7">
+                        <h2><%= post.title %></h2>
+                        <ul class="list-unstyled list-inline blog-info">
+                          <li><i class="fa fa-user"></i><%= post.user.name unless post.user.nil? %></li>
+                            <li><i class="fa fa-calendar"></i> May 08, 2014</li>
+                            <li><i class="fa fa-tags"></i><%= post.post_category.name unless post.post_category.nil? %></li>
+                        </ul>
+                        <p><%= post.content %></p>
+                    </div>    
+                </div>
+
     <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+</div>

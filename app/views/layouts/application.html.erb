@@ -14,13 +14,10 @@
      <%= render 'layouts/header_signed_in' %>
      <div class= "container">
 
-        <div class="col-md-12">
           <%= render 'layouts/messages' %>
-          <%= yield %>
-        </div>
-
-
+          
     </div>
+    <%= yield %>
     <%= render 'layouts/footer' %>
 
     <% else %>

@@ -55,8 +55,6 @@ ActiveRecord::Schema.define(version: 20140508011734) do
     t.integer  "post_category_id"
     t.integer  "user_id"
     t.integer  "location_id"
-    t.integer  "postable_id"
-    t.string   "postable_type"
     t.string   "attached_document_file_name"
     t.string   "attached_document_content_type"
     t.integer  "attached_document_file_size"

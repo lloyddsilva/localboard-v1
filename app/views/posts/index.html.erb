@@ -1,13 +1,11 @@
 <div class="container">
-    <% @posts.each do |post| %>
+    
 
 
 
     <div class="row blog blog-medium margin-bottom-40">
-                    <div class="col-md-5">
-                        <%= image_tag post.attached_document.url(:large) unless post.attached_document.nil? %>
-                    </div>    
-                    <div class="col-md-7">
+                    <% @posts.each do |post| %>
+                    <div class="col-md-4">
                         <h2><%= post.title %></h2>
                         <ul class="list-unstyled list-inline blog-info">
                           <li><i class="fa fa-user"></i><%= post.user.name unless post.user.nil? %></li>
@@ -16,8 +14,9 @@
                         </ul>
                         <p><%= post.content %></p>
                     </div>    
+                    <% end %>
                 </div>
 
-    <% end %>
+    
 
 </div>
